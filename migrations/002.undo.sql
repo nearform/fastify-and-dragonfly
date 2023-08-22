@@ -1,0 +1,3 @@
+DROP TRIGGER tr_users_registration_status_trigger on users;
+
+DROP FUNCTION notify_registration_status_updated;
