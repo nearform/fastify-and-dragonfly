@@ -36,7 +36,10 @@ export async function getRegistrationHistoryByUserIDs(db, userIdList) {
 }
 
 export function insertRegistrationHistoryRow(db, userEvent) {
-  const { userId, status, eventAt } = userEvent
+  const {
+    user: { id: userId, status },
+    eventAt
+  } = userEvent
   return db.query(
     `INSERT INTO registration_histories (userId, status, eventAt) VALUES ($1, $2, TO_TIMESTAMP($3 / 1000.0))`,
     [userId, status, eventAt]

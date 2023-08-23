@@ -52,7 +52,6 @@
     "mercurius": "^13.1.0",
     "mercurius-cache": "^5.0.0",
     "pg": "^8.11.3",
-    "pg-listen": "^1.7.0",
     "pino-pretty": "^10.2.0"
   }
 }

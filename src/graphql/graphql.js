@@ -4,6 +4,7 @@ import {
   getRegistrationHistoryByUserIDs,
   updateUserStatus
 } from '../libs/db.js'
+import { publishUserStatusUpdatedEvent } from '../events/userEvents.js'
 
 export const schema = `
     scalar Date
@@ -51,13 +52,19 @@ export const resolvers = {
   },
   Mutation: {
     createUser: async (_, { user }, ctx) => {
-      return insertUser(ctx.app.pg, user)
+      const newUser = await insertUser(ctx.app.pg, user)
+      await publishUserStatusUpdatedEvent(ctx.app.dragonFly, newUser)
+      return newUser
     },
     approveUser: async (_, { userId }, ctx) => {
-      return updateUserStatus(ctx.app.pg, userId, 'approved')
+      const updatedUser = await updateUserStatus(ctx.app.pg, userId, 'approved')
+      await publishUserStatusUpdatedEvent(ctx.app.dragonFly, updatedUser)
+      return updatedUser
     },
     rejectUser: async (_, { userId }, ctx) => {
-      return updateUserStatus(ctx.app.pg, userId, 'rejected')
+      const updatedUser = await updateUserStatus(ctx.app.pg, userId, 'rejected')
+      await publishUserStatusUpdatedEvent(ctx.app.dragonFly, updatedUser)
+      return updatedUser
     }
   }
 }

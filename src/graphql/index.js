@@ -4,7 +4,7 @@ import mercuriusCache from 'mercurius-cache'
 
 export default async function graphqlService(app, opts) {
   await app.register(import('../plugins/dragonFly.js'), opts)
-  const { dragonFlyClient } = app
+  const { dragonFly } = app
 
   await app.register(mercurius, {
     schema,
@@ -18,7 +18,7 @@ export default async function graphqlService(app, opts) {
     storage: {
       type: 'redis',
       options: {
-        client: dragonFlyClient,
+        client: dragonFly,
         invalidation: true
       }
     },

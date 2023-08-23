@@ -4,6 +4,6 @@ export default async function dragonFlyPlugin(app, opts) {
     port: opts.config.DRAGONFLY_PORT
   })
 
-  app.decorate('dragonFlyClient', app.redis)
+  app.decorate('dragonFly', app.redis)
 }
 dragonFlyPlugin[Symbol.for('skip-override')] = true
