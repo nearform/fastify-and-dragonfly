@@ -1,25 +1,27 @@
 {
-  "name": "hub-template",
+  "name": "fastify-and-dragonfly",
   "version": "1.0.0",
-  "description": "Template to start a new repository on the hub",
-  "main": "index.js",
+  "description": "Application to demonstrate Fastify and Dragonfly",
+  "main": "src/index.js",
   "type": "module",
   "scripts": {
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 0",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "infra:up": "docker-compose up -d",
+    "infra:down": "docker-compose down"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nearform/hub-template.git"
+    "url": "git+https://github.com/nearform/fastify-and-dragonfly.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nearform/hub-template/issues"
+    "url": "https://github.com/nearform/fastify-and-dragonfly/issues"
   },
-  "homepage": "https://github.com/nearform/hub-template#readme",
+  "homepage": "https://github.com/nearform/fastify-and-dragonfly#readme",
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
