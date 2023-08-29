@@ -50,6 +50,7 @@
     "fastify": "^4.22.0",
     "fluent-json-schema": "^4.1.1",
     "mercurius": "^13.1.0",
+    "mercurius-cache": "^5.0.0",
     "pino-pretty": "^10.2.0"
   }
 }
