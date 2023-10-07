@@ -1,9 +1,10 @@
 import mercurius from 'mercurius'
-import { schema, resolvers, loaders } from './graphql.js'
 import mercuriusCache from 'mercurius-cache'
+import { loaders, resolvers, schema } from './graphql.js'
 
 export default async function graphqlService(app, opts) {
   await app.register(import('../plugins/dragonFly.js'), opts)
+  await app.register(import('../plugins/eventEmitter.js'), opts)
   const { dragonFly } = app
 
   await app.register(mercurius, {

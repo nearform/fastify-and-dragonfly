@@ -37,7 +37,7 @@ export async function getRegistrationHistoryByUserIDs(db, userIdList) {
 
 export function insertRegistrationHistoryRow(db, userEvent) {
   const {
-    user: { id: userId, status },
+    payload: { id: userId, status },
     eventAt
   } = userEvent
   return db.query(

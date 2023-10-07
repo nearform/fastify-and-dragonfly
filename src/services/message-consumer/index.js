@@ -1,5 +1,5 @@
 import { insertRegistrationHistoryRow } from '../../libs/db.js'
-import { USER_STATUS_UPDATED_EVENT } from '../../events/userEvents.js'
+import { USER_STATUS_UPDATED_EVENT } from '../../utils/constants.js'
 
 export default async function messageConsumerService(app, opts) {
   await app.register(import('../../plugins/dragonFly.js'), opts)
@@ -8,6 +8,7 @@ export default async function messageConsumerService(app, opts) {
   await dragonFly.subscribe(USER_STATUS_UPDATED_EVENT)
   dragonFly.on('message', async (channel, message) => {
     const event = JSON.parse(message)
+    console.log(event)
     await insertRegistrationHistoryRow(app.pg, event)
     app.log.info(message, `Received event in "${channel}"`)
   })
