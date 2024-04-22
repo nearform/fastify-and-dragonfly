@@ -50,7 +50,7 @@
     "fluent-json-schema": "^4.2.1",
     "ioredis": "^5.4.1",
     "fastify-plugin": "^4.5.1",
-    "mercurius": "^14.0.0",
+    "mercurius": "^14.1.0",
     "mercurius-cache": "^6.0.1",
     "pg": "^8.11.5",
     "pino-pretty": "^11.0.0"
