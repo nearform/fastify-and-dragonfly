@@ -53,6 +53,6 @@
     "mercurius": "^15.0.0",
     "mercurius-cache": "^7.0.2",
     "pg": "^8.13.0",
-    "pino-pretty": "^11.2.2"
+    "pino-pretty": "^11.3.0"
   }
 }
