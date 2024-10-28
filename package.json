@@ -52,7 +52,7 @@
     "fastify-plugin": "^5.0.1",
     "mercurius": "^15.1.0",
     "mercurius-cache": "^7.0.2",
-    "pg": "^8.13.0",
+    "pg": "^8.13.1",
     "pino-pretty": "^11.3.0"
   }
 }
