@@ -51,7 +51,7 @@
     "ioredis": "^5.4.2",
     "fastify-plugin": "^5.0.1",
     "mercurius": "^16.0.0",
-    "mercurius-cache": "^7.0.2",
+    "mercurius-cache": "^8.0.0",
     "pg": "^8.13.1",
     "pino-pretty": "^13.0.0"
   }
